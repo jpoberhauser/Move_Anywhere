@@ -1,7 +1,7 @@
 # Move Anywhere
 
 
-##Sections:
+## Sections:
 
 * What will I do? (jobs)
 * Where will I live? (How much will I need to make to keep my 200 sqft, 2 bedroom apt?)
@@ -16,7 +16,7 @@
 
 
 
-##Data Sources:
+## Data Sources:
 If i move there, how would i move around, how can i get a job, how much will i make, how much will i NEED to make to get a 1 bedroom apt, what events are happening on the weekends, what is the demographic makeup, what are the public schools, quality of the air, gyms, restaurants
 
 Data Sources:
