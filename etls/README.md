@@ -1,6 +1,14 @@
 # Requirements
 
-## get_data() function
+## ETL script requirements
 
     get_data():
-        return json.loads() object
+        return list like the following example:
+        [ "tablename",
+        {col : val, col : val},
+        {col : val, col : val},
+        {col : val, col : val},
+        {col : val, col : val},
+        {col : val, col : val},
+        ...
+        ]
