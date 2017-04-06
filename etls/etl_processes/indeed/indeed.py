@@ -42,4 +42,8 @@ def get_data():
                     job_dict['state'] = res['state']
                     job_dict['snippet'] = res['snippet']
                 res_list.append(job_dict)
+
     return res_list
+
+if __name__ == "__main__":
+	get_data()
