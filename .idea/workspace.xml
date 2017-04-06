@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c422a7c-8a56-424e-a9c8-43955511f749" name="Default" comment="initial commit" />
+    <list default="true" id="2c422a7c-8a56-424e-a9c8-43955511f749" name="Default" comment="initial commit">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/etls/build/lib/Zillow/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/etls/build/lib/Zillow/zillow.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/etls/build/lib/eventbrite/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/etls/build/lib/eventbrite/events.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/etls/build/lib/indeed/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/etls/build/lib/indeed/indeed.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/etls/etl_processes/Zillow/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/etls/etl_processes/eventbrite/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/etls/etl_processes/indeed/__init__.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/etls/setup.py" afterPath="$PROJECT_DIR$/etls/setup.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +30,8 @@
       <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/etls/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            <state relative-caret-position="30">
+              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -41,8 +53,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/etls/README.md" />
-        <option value="$PROJECT_DIR$/etls/setup.py" />
         <option value="$PROJECT_DIR$/etls/Zillow/__init__.py" />
+        <option value="$PROJECT_DIR$/etls/setup.py" />
       </list>
     </option>
   </component>
@@ -357,8 +369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/etls/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        <state relative-caret-position="30">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
           <folding />
         </state>
       </provider>
