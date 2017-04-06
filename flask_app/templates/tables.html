@@ -1,0 +1,42 @@
+<!doctype html>
+
+<head>
+    <title>Exploratory Tables</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+</head>
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+<div class="span2">
+  <h1>Explore Jobs in NYC</h1>
+  <p>Suggestions based on your preferences</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Job Descriptions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lead Data Scientist </td>
+        <td>Submit Meaningful Use attestations, including data collection, data validity, and submission of materials. Proficiency in analyzing a wide array of data types,...</td>
+      </tr>
+      <tr>
+        <td>Data Scientist, CDHI</td>
+        <td>The Climate Corporation’s mission is to help the world’s farmers sustainably increase their productivity with digital tools. The Data and Analytics team is focused on creating competitive advantage for The Climate Corporation and our customers through novel data infrastructure, metrics, insights, and data services. We are a small but rapidly growing data science and engineering team that builds and leverages state-of-the-art analytics systems. Our work informs decisions and direction for our business, while also impacting our products. Data Scientists at The Climate Corporation build predictive and prescriptive models to deliver insights to farmers. In order to take advantage of increasing amounts of agricultural and environmental data, we are hiring new data scientists to drive the research and development of scalable machine learning models. In this role, your work will broadly influence the company's data and products. </td>
+      </tr>
+      <tr>
+        <td>Data Scientist - Ads Marketplace</td>
+        <td>Data Scientist - Ads Marketplace. MS or PhD in computer science, data mining, machine learning, statistics, math, engineering, operations research, or other...</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="jumbotron">
+  <p><a class="btn btn-primary" href="/" role="button">Home</a>
+      <p><a class="btn btn-primary" href="/correlations" role="button">Correlations between variables</a>
+</div>
