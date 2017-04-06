@@ -2,4 +2,5 @@
 
 ## get_data() function
 
-    put some shit here
+    get_data():
+        return json.loads() object
