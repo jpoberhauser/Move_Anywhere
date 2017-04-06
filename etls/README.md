@@ -5,10 +5,10 @@
     get_data():
         return list like the following example:
         [ "tablename",
-        {col : val, col : val},
-        {col : val, col : val},
-        {col : val, col : val},
-        {col : val, col : val},
-        {col : val, col : val},
+        {col1 : val, col2 : val},
+        {col1 : val, col2 : val},
+        {col1 : val, col2 : val},
+        {col1 : val, col2 : val},
+        {col1 : val, col2 : val},
         ...
         ]
