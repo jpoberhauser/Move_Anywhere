@@ -31,12 +31,12 @@ def tables():
     """
     return flask.render_template("tables.html")
 
-@app.route("/hello")
+@app.route("/test")
 def hello():
     """
     When you request the root path, you'll get the index.html template.
     """
-    return "hello"
+    return flask.render_template("input_form.html")
 
 
 
