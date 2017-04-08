@@ -21,7 +21,8 @@ print '\n'
 items = root.findall('response/list/region')
 for item in items:
     print item.find('id').text
-    print item.find('')
+    print item.find('name').text
+    #print item.find('zindex').text
     # Print the status code of the response.
 #print(response.status_code)
 
