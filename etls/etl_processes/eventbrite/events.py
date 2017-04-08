@@ -25,7 +25,7 @@ def get_data():
             event_dict['event_description'] = index['description']['text']
             event_dict['event_date'] = str(datetime.datetime.strptime(index['start']['utc'], "%Y-%m-%dT%H:%M:%SZ").date())
             res_list.append(event_dict)
-
+    return res_list
 
 if __name__ == "__main__":
     get_data()
