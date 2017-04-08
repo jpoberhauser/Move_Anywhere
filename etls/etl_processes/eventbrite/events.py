@@ -9,7 +9,7 @@ def get_data():
     res_list = ['events']
     for city in cities:
         city = city.replace(" ", "+")
-        print city
+
         url = "https://www.eventbriteapi.com/v3/events/search/?q="+city
         response = requests.get(
             url,
