@@ -3,7 +3,7 @@ import psycopg2
 
 def connectdb(db_name, user_name, hostname, pswd):
     try:
-        db_conn = psycopg2.connect(dbname=db_name, user=user_name, host=hostname, password=pwd)
+        db_conn = psycopg2.connect(dbname=db_name, user=user_name, host=hostname, password=pswd)
     except:
         print("Not able to connect to " + db_name)
     return db_conn
@@ -28,7 +28,7 @@ def drop_table(db_cursor, table_name):
 
 
 def insert_into_table(db_cursor, table_name, column_names, values):
-    insert_into_table_query =  "INSERT INTO %s(%s) VALUES (%s);" % (table_name, column_names, values)
+    insert_into_table_query =  "INSERT INTO %s (%s) VALUES (%s);" % (table_name, column_names, values)
     execute(db_cursor, insert_into_table_query) #Uncomment later
 
 
