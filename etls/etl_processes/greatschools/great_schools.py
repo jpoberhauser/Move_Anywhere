@@ -100,5 +100,10 @@ def get_data():
         res_list.append(school_dict)
     return res_list
 
-schools = get_data()
+
+
+
+if __name__ == "__main__":
+    schools = get_data()
+
 
