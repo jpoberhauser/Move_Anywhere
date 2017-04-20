@@ -40,63 +40,63 @@ def get_data():
             try:
                 school_dict['gsId']= item.find('gsId').text
             except:
-                school_dict['gsId']= 'NA'
+                school_dict['gsId']= 'NULL'
             try:
                 school_dict['name']= item.find('name').text
             except:
-                school_dict['name'] = 'NA'
+                school_dict['name'] = 'NULL'
             try:
                 school_dict['type'] = item.find('type').text
             except:
-                school_dict['type'] = 'NA'
+                school_dict['type'] = 'NULL'
             try:
                 school_dict['gradeRange']= item.find('gradeRange').text
             except:
-                school_dict['gradeRange'] = 'NA'
+                school_dict['gradeRange'] = 'NULL'
             try:
                 school_dict['enrollment'] = item.find('enrollment').text
             except:
-                school_dict['enrollment'] = 'NA'
+                school_dict['enrollment'] = 'NULL'
             try:
                 school_dict['parentRating'] = item.find('parentRating').text
             except:
-                school_dict['parentRating'] = 'NA'
+                school_dict['parentRating'] = 'NULL'
             try:
                 school_dict['city']= q
             except:
-                school_dict['city'] = 'NA'
+                school_dict['city'] = 'NULL'
             try:
                 school_dict['state']= state
             except:
-                school_dict['state'] = 'NA'
+                school_dict['state'] = 'NULL'
             try:
                 school_dict['address'] =  item.find('address').text
             except:
-                school_dict['address'] = 'NA'
+                school_dict['address'] = 'NULL'
             try:
                 school_dict['phone'] = item.find('phone').text
             except:
-                school_dict['phone'] = 'NA'
+                school_dict['phone'] = 'NULL'
             try:
                 school_dict['lat']= item.find('lat').text
             except:
-                school_dict['lat'] = 'NA'
+                school_dict['lat'] = 'NULL'
             try:
                 school_dict['lon'] = item.find('lon').text
             except:
-                school_dict['lon'] = 'NA'
+                school_dict['lon'] = 'NULL'
             try:
                 school_dict['overviewLink']=item.find('overviewLink').text
             except:
-                school_dict['overviewLink'] = 'NA'
+                school_dict['overviewLink'] = 'NULL'
             try:
                 school_dict['ratingsLink'] = item.find('ratingsLink').text
             except:
-                school_dict['ratingsLink'] = 'NA'
+                school_dict['ratingsLink'] = 'NULL'
             try:
                 school_dict['reviewsLink'] = item.find('reviewsLink').text
             except:
-                school_dict['reviewsLink'] = 'NA'
+                school_dict['reviewsLink'] = 'NULL'
         res_list.append(school_dict)
     return res_list
 
