@@ -15,21 +15,6 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 
 ################################################################
-#Conenction to SQL
-#host: appdev.cuq8d0oymhgs.us-west-2.rds.amazonaws.com
-#port: 5432
-#dbname: numinous
-#username: stanley
-#password: Msan4ever!
-#conn = psycopg2.connect("port=5432 dbname='numinous' user='stanley' host='appdev.cuq8d0oymhgs.us-west-2.rds.amazonaws.com' password='Msan4ever!'")
-#cur = conn.cursor()
-#cur.execute("""SELECT datname from pg_database""")
-#rows = cur.fetchall()
-#print "\nShow me the databases:\n"
-#for row in rows:
-#    print "   ", row[0]
-
-#conn.close()
 ################################################################
 
 app = flask.Flask(__name__)
@@ -42,25 +27,46 @@ def home_page():
     return flask.render_template("index.html")
 
 
-@app.route("/tables")
-def tables():
-    """
-    When you request the root path, you'll get the index.html template.
-    """
-    return flask.render_template("tables.html")
-
 @app.route("/input_info")
-def hello():
+def input_form():
     """
     When you request the root path, you'll get the index.html template.
     """
     return flask.render_template("input_form.html")
 
-
+@app.route("/tables")
+def show_tables():
+    return flask.render_template('view.html',tables=[jobs.to_html(classes='jobs'),events.to_html(classes='events'),
+    schools.to_html(classes='schools')],
+    titles = ['na', 'Jobs', 'Events','Schools'])
 
 if __name__ == "__main__":
     import os
     port = 8000
+    conn = psycopg2.connect("port=5432 dbname='numinous' user='stanley' host='appdev.cuq8d0oymhgs.us-west-2.rds.amazonaws.com' password='Msan4ever!'")
+    cur = conn.cursor()
+    #cur.execute("""SELECT datname from pg_database""")
+    cur.execute("""SELECT * from jobs""")
+    jobs = pd.DataFrame(cur.fetchall(), columns=['id', 'city', 'job_id',
+    'title','url','company','snippet','state','date_posted'])
+
+
+    cur = conn.cursor()
+    #cur.execute("""SELECT datname from pg_database""")
+    cur.execute("""SELECT * from events""")
+    events = pd.DataFrame(cur.fetchall(), columns=['event_name', 'city', 'event_description',
+    'event_date','date_added'])
+
+
+    cur = conn.cursor()
+    #cur.execute("""SELECT datname from pg_database""")
+    cur.execute("""SELECT * from schools""")
+    schools = pd.DataFrame(cur.fetchall(), columns=['id', 'city','name', 'phone',
+    'reviewslink','enrollment','parentrating','lon','overviewlink','gsid','state','address',
+    'lat','type','graderange','ratingslink'])
+
+
+    conn.close()
     # Open a web browser pointing at the app.
     os.system("open http://localhost:{0}".format(port))
     # Set up the development server on port 8000.
