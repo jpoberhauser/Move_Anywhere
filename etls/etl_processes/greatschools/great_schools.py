@@ -23,10 +23,7 @@ def get_data():
 
     res_list = ['schools']
 
-
-
     for item in city_state:
-        school_dict = {}
         q = item[0]
         state = item[1]
         url = 'http://api.greatschools.org/search/schools?key=' + gs_key + '&state=' + state + '&q=' + q
@@ -37,6 +34,7 @@ def get_data():
         if q == 'SanFrancisco':
             q = 'San Francisco'
         for item in items:
+            school_dict = {}
             try:
                 school_dict['gsId']= item.find('gsId').text
             except:
@@ -97,7 +95,7 @@ def get_data():
                 school_dict['reviewsLink'] = item.find('reviewsLink').text
             except:
                 school_dict['reviewsLink'] = 'NULL'
-        res_list.append(school_dict)
+            res_list.append(school_dict)
     return res_list
 
 
@@ -106,4 +104,4 @@ def get_data():
 if __name__ == "__main__":
     schools = get_data()
 
-
+#print(get_data())
