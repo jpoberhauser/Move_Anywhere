@@ -4,15 +4,9 @@ import numpy as np
 import pandas as pd
 import random
 import StringIO
-import matplotlib.pyplot as plt
-import seaborn as sns
-import StringIO
-import base64
 import psycopg2
 
 from flask import Flask, make_response
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from matplotlib.figure import Figure
 
 ################################################################
 ################################################################
@@ -87,4 +81,4 @@ if __name__ == "__main__":
     os.system("open http://localhost:{0}".format(port))
     # Set up the development server on port 8000.
     app.debug = True
-    app.run(port=port)
+    app.run(port=5000, host='0.0.0.0')
