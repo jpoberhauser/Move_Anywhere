@@ -36,9 +36,19 @@ def input_form():
 
 @app.route("/NYC")
 def show_j_nyc():
-    cur.execute("""SELECT city,title,company, snippet from jobs where city='New York' limit 10""")
+    cur.execute("""SELECT city,title,company, snippet from jobs where city='New York' limit 2""")
     jobs = pd.DataFrame(cur.fetchall(), columns=[ 'city',
     'title','company','snippet'])
+
+
+    cur.execute("""SELECT event_name, event_description, event_date, city from events where city='New+York,+NY' limit 2""")
+    events = pd.DataFrame(cur.fetchall(), columns=['event_name', 'event_description',
+    'event_date','city'])
+
+    cur.execute("""SELECT name, phone, reviewslink, ratingslink from schools where city='New York' limit 2""")
+    schools = pd.DataFrame(cur.fetchall(), columns=['name', 'phone',
+    'reviewslink','ratingslink'])
+
 
     return flask.render_template('view.html',tables=[jobs.to_html(classes='jobs'),events.to_html(classes='events'),
     schools.to_html(classes='schools')],
