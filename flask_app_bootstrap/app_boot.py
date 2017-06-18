@@ -18,7 +18,7 @@ def home_page():
     """
     When you request the root path, flask will return the landing page  html.
     """
-    return flask.render_template("index2.html")
+    return flask.render_template("index.html")
 
 @app.route("/v2")
 def home_page2():
