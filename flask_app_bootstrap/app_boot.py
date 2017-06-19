@@ -20,7 +20,28 @@ def home_page():
     """
     return flask.render_template("index.html")
 
+@app.route("/v2")
+def home_page2():
+    """
+    When you request the root path, flask will return the landing page  html.
+    """
+    return flask.render_template("index2.html")
 
+@app.route("/v3")
+def home_page3():
+    """
+    When you request the root path, flask will return the landing page  html.
+    """
+    return flask.render_template("index3.html")
+
+
+@app.route("/v4")
+def home_page4():
+    """
+    When you request the root path, flask will return the landing page  html.
+    """
+    return flask.render_template("index4.html")
+    
 @app.route("/input_info")
 def input_form():
     """
