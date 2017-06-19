@@ -105,17 +105,17 @@ def show_j_san_fran():
     return flask.render_template('view.html',tables=[jobs.to_html(classes='jobs'),events.to_html(classes='events'),
     schools.to_html(classes='schools')], titles = ['na', 'Jobs', 'Events','Schools'])
 
-@app.route("/Houston")
-def show_j_houst():
-    cur.execute("""SELECT city,title,company, snippet from jobs where city='Houston' limit 2""")
+@app.route("/Chicago")
+def show_j_chicago():
+    cur.execute("""SELECT city,title,company, snippet from jobs where city='Chicago' limit 2""")
     jobs = pd.DataFrame(cur.fetchall(), columns=[ 'city',
     'title','company','snippet'])
 
-    cur.execute("""SELECT event_name, event_description, event_date, city from events where city='Houston,+TX' limit 2""")
+    cur.execute("""SELECT event_name, event_description, event_date, city from events where city='Chicago,+IL' limit 2""")
     events = pd.DataFrame(cur.fetchall(), columns=['event_name', 'event_description',
     'event_date','city'])
 
-    cur.execute("""SELECT name, phone, reviewslink, ratingslink from schools where city='Houston' limit 2""")
+    cur.execute("""SELECT name, phone, reviewslink, ratingslink from schools where city='Chhicago' limit 2""")
     schools = pd.DataFrame(cur.fetchall(), columns=['name', 'phone',
     'reviewslink','ratingslink'])
 
@@ -141,7 +141,7 @@ def show_j_bost():
     schools.to_html(classes='schools')], titles = ['na', 'Jobs', 'Events','Schools'])
 
 @app.route("/Miami")
-def show_j_bost():
+def show_j_miami():
     cur.execute("""SELECT city,title,company, snippet from jobs where city='Miami' limit 2""")
     jobs = pd.DataFrame(cur.fetchall(), columns=[ 'city',
     'title','company','snippet'])
@@ -193,4 +193,4 @@ if __name__ == "__main__":
     # Set up the development server on port 8000.
     app.debug = True
 
-    app.run(port=5000, host='0.0.0.0')
+    app.run(port=80, host='0.0.0.0')
