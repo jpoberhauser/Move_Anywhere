@@ -20,27 +20,6 @@ def home_page():
     """
     return flask.render_template("index.html")
 
-@app.route("/v2")
-def home_page2():
-    """
-    When you request the root path, flask will return the landing page  html.
-    """
-    return flask.render_template("index2.html")
-
-@app.route("/v3")
-def home_page3():
-    """
-    When you request the root path, flask will return the landing page  html.
-    """
-    return flask.render_template("index3.html")
-
-
-@app.route("/v4")
-def home_page4():
-    """
-    When you request the root path, flask will return the landing page  html.
-    """
-    return flask.render_template("index4.html")
 
 @app.route("/input_info")
 def input_form():
@@ -68,6 +47,96 @@ def show_j_nyc():
     return flask.render_template('view.html',tables=[jobs.to_html(classes='jobs'),events.to_html(classes='events'),
     schools.to_html(classes='schools')],
     titles = ['na', 'Jobs', 'Events','Schools'])
+
+@app.route("/Austin")
+def show_j_austin():
+    cur.execute("""SELECT city,title,company, snippet from jobs where city='Austin' limit 2""")
+    jobs = pd.DataFrame(cur.fetchall(), columns=[ 'city',
+    'title','company','snippet'])
+
+
+    cur.execute("""SELECT event_name, event_description, event_date, city from events where city='Austin,+TX' limit 2""")
+    events = pd.DataFrame(cur.fetchall(), columns=['event_name', 'event_description',
+    'event_date','city'])
+
+    cur.execute("""SELECT name, phone, reviewslink, ratingslink from schools where city='Austin' limit 2""")
+    schools = pd.DataFrame(cur.fetchall(), columns=['name', 'phone',
+    'reviewslink','ratingslink'])
+
+    return flask.render_template('view.html',tables=[jobs.to_html(classes='jobs'),events.to_html(classes='events'),
+    schools.to_html(classes='schools')], titles = ['na', 'Jobs', 'Events','Schools'])
+
+@app.route("/SF")
+def show_j_san_fran():
+    cur.execute("""SELECT city,title,company, snippet from jobs where city='San Francisco' limit 2""")
+    jobs = pd.DataFrame(cur.fetchall(), columns=[ 'city',
+    'title','company','snippet'])
+
+
+    cur.execute("""SELECT event_name, event_description, event_date, city from events where city='San+Francisco,+CA' limit 2""")
+    events = pd.DataFrame(cur.fetchall(), columns=['event_name', 'event_description',
+    'event_date','city'])
+
+    cur.execute("""SELECT name, phone, reviewslink, ratingslink from schools where city='San Francisco' limit 2""")
+    schools = pd.DataFrame(cur.fetchall(), columns=['name', 'phone',
+    'reviewslink','ratingslink'])
+
+    return flask.render_template('view.html',tables=[jobs.to_html(classes='jobs'),events.to_html(classes='events'),
+    schools.to_html(classes='schools')], titles = ['na', 'Jobs', 'Events','Schools'])
+
+@app.route("/Houston")
+def show_j_houst():
+    cur.execute("""SELECT city,title,company, snippet from jobs where city='Houston' limit 2""")
+    jobs = pd.DataFrame(cur.fetchall(), columns=[ 'city',
+    'title','company','snippet'])
+
+    cur.execute("""SELECT event_name, event_description, event_date, city from events where city='Houston,+TX' limit 2""")
+    events = pd.DataFrame(cur.fetchall(), columns=['event_name', 'event_description',
+    'event_date','city'])
+
+    cur.execute("""SELECT name, phone, reviewslink, ratingslink from schools where city='Houston' limit 2""")
+    schools = pd.DataFrame(cur.fetchall(), columns=['name', 'phone',
+    'reviewslink','ratingslink'])
+
+    return flask.render_template('view.html',tables=[jobs.to_html(classes='jobs'),events.to_html(classes='events'),
+    schools.to_html(classes='schools')], titles = ['na', 'Jobs', 'Events','Schools'])
+
+@app.route("/Boston")
+def show_j_bost():
+    cur.execute("""SELECT city,title,company, snippet from jobs where city='Boston' limit 2""")
+    jobs = pd.DataFrame(cur.fetchall(), columns=[ 'city',
+    'title','company','snippet'])
+
+
+    cur.execute("""SELECT event_name, event_description, event_date, city from events where city='Boston,+MA' limit 2""")
+    events = pd.DataFrame(cur.fetchall(), columns=['event_name', 'event_description',
+    'event_date','city'])
+
+    cur.execute("""SELECT name, phone, reviewslink, ratingslink from schools where city='Boston' limit 2""")
+    schools = pd.DataFrame(cur.fetchall(), columns=['name', 'phone',
+    'reviewslink','ratingslink'])
+
+    return flask.render_template('view.html',tables=[jobs.to_html(classes='jobs'),events.to_html(classes='events'),
+    schools.to_html(classes='schools')], titles = ['na', 'Jobs', 'Events','Schools'])
+
+@app.route("/Miami")
+def show_j_bost():
+    cur.execute("""SELECT city,title,company, snippet from jobs where city='Miami' limit 2""")
+    jobs = pd.DataFrame(cur.fetchall(), columns=[ 'city',
+    'title','company','snippet'])
+
+    cur.execute("""SELECT event_name, event_description, event_date, city from events where city='Miami,+FL' limit 2""")
+    events = pd.DataFrame(cur.fetchall(), columns=['event_name', 'event_description',
+    'event_date','city'])
+
+    cur.execute("""SELECT name, phone, reviewslink, ratingslink from schools where city='Miami' limit 2""")
+    schools = pd.DataFrame(cur.fetchall(), columns=['name', 'phone',
+    'reviewslink','ratingslink'])
+
+    return flask.render_template('view.html',tables=[jobs.to_html(classes='jobs'),events.to_html(classes='events'),
+    schools.to_html(classes='schools')], titles = ['na', 'Jobs', 'Events','Schools'])
+
+
 
 @app.route("/tables")
 def show_tables():
@@ -102,4 +171,5 @@ if __name__ == "__main__":
     os.system("open http://localhost:{0}".format(port))
     # Set up the development server on port 8000.
     app.debug = True
-    app.run()
+
+    app.run(port=5000, host='0.0.0.0')
