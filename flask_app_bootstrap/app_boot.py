@@ -102,4 +102,4 @@ if __name__ == "__main__":
     os.system("open http://localhost:{0}".format(port))
     # Set up the development server on port 8000.
     app.debug = True
-    app.run(port=80, host='0.0.0.0')
+    app.run()
